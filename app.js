@@ -1,64 +1,54 @@
 function askName(){
     var p = prompt(`what is your name?`);
-    return p
-  
-  }
-  
-  function temp(a){
-    var tempnum = prompt(`welcome back, ${a}, please enter the temperature you want to convert.`)
-    return tempnum
-  }
+    return p 
+}
 
+function temp(a){
+  var tempnum = prompt(`welcome back, ${a}, please enter the temperature you want to convert.`)
+  return tempnum
+}
+
+function ctof(x){ // f
   var fmath = ((x * 9)/5)+32;
+  return fmath;
+}
 
-
-  
-  function ctof(x){
-    fmath;
-    return fmath;
-
-
-
-  }
-
+function ftoc(y){ // c
   var cmath = (((y - 32) * 5)/9);
+  return cmath; 
+}
 
-  
-  function ftoc(y){
-    cmath;
-    return cmath; 
+function choice(){
+  var n = askName()
+  var t = temp(n)
+  var u = prompt(`do you want to find a c (f to c)  temp or f (c to f) temp?`)
+
+  if (u == "f"){
+    var f = ctof(t);
+    alert(`${t} C is ${f} F.`);
+    return f;
   }
 
-
-
-  function choice(){
-    var u = prompt(`do you want to find a c temp or f temp?`)
-
-    if (u = "f"){
-      var f = ftoc;
-      alert(`${tempnumb} C is ${f} F.`);
-      return f;
-    }
-
-    else if(u = "c"){
-      var c = ctof;
-      alert(`${tempnum} F is ${c} C.`);
-      return c;
-    }
-    
-    else{
-      alert(`please type either "f" or "c"`)
-    }
+  else if(u == "c"){
+    var c = ftoc(t);
+    alert(`${t} F is ${c} C.`);
+    return c;
   }
   
+  else{
+    alert(`please type either "f" or "c"`)
+  }
+
+  
+}
+
+choice()
+var q = prompt("Do you want to do another conversion? If yes, press 1.")
+if (q == "1") {
+  choice() // recursive function
+}
 
 
-  var temperature = temp(askName());
-
-  var choose = choice();
-
-
-  var c = ftoc();
 
 
   
